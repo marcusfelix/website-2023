@@ -5,7 +5,10 @@ const { frontmatter } = Astro.props;
 ---
 
 <Website title={frontmatter.title + " - Marcus Felix"}>
-  <div class="container mx-auto max-w-3xl px-4 py-20 prose">
+  <div class="flex gap-4 px-4">
+    {frontmatter.tags.map((e) => <span class="bg-gray-200 text-gray-600 text-sm px-2 rounded-full">{e}</span>)}
+  </div>
+  <div class="container mx-auto max-w-3xl px-4 py-6 prose">
     <slot/>
   </div>
 </Website>
